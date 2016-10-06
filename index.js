@@ -31,10 +31,8 @@ Seeder.prototype.seed = function(attributes, callback){
                 sails.log.debug('Seeding ' + key + '...');
                 model.createEach(value).exec(function(err, results) {
                     if (err) {
-                        sails.log.debug(err);
-                        callback(err);
+                        callback('Could not create ' + key + ' new entry.');
                     } else {
-                        sails.log.debug((key + ' seed planted').grey);
                         callback();
                     }
                 });
@@ -43,10 +41,8 @@ Seeder.prototype.seed = function(attributes, callback){
                 callback();
             }
         });
-    } else{
-        var err = new Error('Model is null');
-        err.code = 'invalidModel';        
-        callback(err);
+    } else{    
+        callback('Model is null');
     }
 };
 

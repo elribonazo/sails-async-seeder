@@ -1,6 +1,6 @@
 {
   "name": "sails-async-seeder",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Automatically populate a sails database with fake data on each environment with simple dummy files stored in config folder.",
   "main": "index.js",
   "scripts": {
